@@ -1,0 +1,10 @@
+RESTlets provide one option for integration with NetSuite. Other options include SOAP-based web services, and Suitelets. \SA ID:19203
+potential uses of RESTlets generally include the following:
+
+Retrieving, adding, or manipulating data within NetSuite, from an external source. In this sense, RESTlets can be seen as an alternative to NetSuite’s SOAP-based web services.
+
+Customizing the behavior of pages and features within NetSuite. In this sense, RESTlets can be seen an alternative to other script types, such as server-side Suitelets. The advantage of using a RESTlet compared with a Suitelet is that the RESTlet can return data, in plain text or JSON, to the client script.
+One advantage of RESTlets over other script types is that NetSuite requires authentication for RESTlets. If a RESTlet call originates from a client that does not have an existing session in the NetSuite account where the RESTlet is deployed, NetSuite requires the call to include an authorization header.
+
+\SA ID:50997
+
