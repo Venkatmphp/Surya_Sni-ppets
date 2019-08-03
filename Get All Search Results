@@ -1,0 +1,23 @@
+ var itemSearch = search.load({
+            id: 121 // change saved search id
+        });
+
+        // declare array for results
+        var results = [];
+        var count = 0;
+        var pageSize = 1000;
+        var start = 0;
+
+        // run saved search
+        do {
+            var subresults = itemSearch.run().getRange({ 
+            	start: start, 
+            	end: start + pageSize
+            });
+            
+            results = results.concat(subresults);
+            count = subresults.length;
+            start += pageSize;
+        } while (count == pageSize);
+
+        return JSON.stringify(results);
