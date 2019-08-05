@@ -1,0 +1,5 @@
+ SearchObj.run().each(function(result) {
+            var allValues = result.getAllValues();
+            results_arr.push(allValues);
+            return true;
+        });
