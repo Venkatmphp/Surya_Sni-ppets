@@ -1,0 +1,32 @@
+/**
+*
+* @NApiVersion 2.0
+*
+*/
+require(['N/record', 'N/email', 'N/search','N/log'],
+
+    function callbackFunction(record, email, search,log) {
+
+        function getFunction() {
+	
+					var objRecord = record.load({
+						type: record.Type.SALES_ORDER, 
+						id: 32720,
+						isDynamic: true
+					});
+var aasd = objRecord.length;
+var cc = objRecord[0].options;
+var quantity = objRecord.getSublistValue({sublistId: 'item',fieldId: 'options',line: 0});
+var objSublist = objRecord.getSublist({
+   sublistId: 'item' 
+});
+
+var objColumn = objSublist.getColumn({
+      fieldId: 'options'
+});
+				
+var aa=0;
+}
+getFunction();
+});
+var a=0;
