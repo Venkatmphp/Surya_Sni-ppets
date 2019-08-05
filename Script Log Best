@@ -1,0 +1,7 @@
+  debug('Item '+itemId+' of type '+itemType+' added to item map');
+
+function debug(val)
+{
+   nlapiLogExecution('DEBUG', val);
+}
+//END UTILITY FUNCTIONS
