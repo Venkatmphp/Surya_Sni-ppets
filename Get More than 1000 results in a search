@@ -1,0 +1,20 @@
+ var filters = new Array();
+
+filters[1] = new nlobjSearchFilter('mainline',null,'is','T');
+
+var columns = new Array();
+
+columns[0] = new nlobjSearchColumn('internalid').setSort(); //sort the result based on internalid
+
+var results = nlapiSearchRecord('transaction',null,filters,columns); //search record
+
+var completeResultSet = results; //copy the result
+
+while(results.length == 1000){ //if there are more than 1000 records
+
+     var lastId = results[999].getValue('internalid'); //note the last record retrieved
+     filters[2] = new nlobjSearchFilter('internalidnumber',null,'greaterthan',lastId); //create new filter to restrict the next search based on the last record returned
+     results = nlapiSearchRecord('transaction',null,filters,columns);
+
+     completeResultSet = completeResultSet.concat(results); //add the result to the complete result set 
+} 
