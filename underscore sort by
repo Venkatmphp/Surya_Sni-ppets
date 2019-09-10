@@ -1,0 +1,4 @@
+<!-- SORT BY -->
+var sortedNames = _.sortBy(ItemsList, 'name');
+var sortedNamesR = _.sortBy(ItemsList, 'name').reverse();
+<!--SORT BY-->
