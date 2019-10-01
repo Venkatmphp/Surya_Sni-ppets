@@ -1,0 +1,19 @@
+var filters = new Array();
+/*Filter to retrieve only files or Sub-Folders in the specified folder ID*/
+filters[0] = new nlobjSearchFilter('predecessor', null, 'anyof', 1745);
+/*Filter to limit search result to only files and not Sub-Folders in the specified folder ID*/
+filters[1] = new nlobjSearchFilter('parent', null, 'noneof', 1745);
+
+/*Column to display file's Internal ID in the search result*/
+var columns = new Array();
+columns[0] = new nlobjSearchColumn('internalid', 'file');
+
+/*Create an array to store file ids*/
+var fileID = [];
+
+var searchResults = nlapiSearchRecord('folder', null, filters, columns);
+
+for (var i = 0; i < searchResults.length; i++)
+{
+     fileID.push(searchResults[i].getValue('internalid', 'file'));  
+}
